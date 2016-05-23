@@ -1,0 +1,15 @@
+<ion-popover-view class="mma-mod_quiz-toc">
+    <ion-content>
+        <nav>
+            <ul class="list">
+                <a ng-repeat="page in toc" class="item item-text-wrap" ng-class='{"mma-mod-quiz-highlighted": attempt.currentpage + 1 == page}' ng-click="loadPage(page - 1, true)">
+                    <span>{{ 'mm.core.pagea' | translate:{$a: page} }}</span>
+                </a>
+                <a class="item item-text-wrap" ng-click="loadPage(-1, true)" ng-class='{"mma-mod-quiz-highlighted": isReview && attempt.currentpage == -1}'>
+                    <span ng-if="!isReview">{{ 'mma.mod_quiz.finishattemptdots' | translate }}</span>
+                    <span ng-if="isReview">{{ 'mma.mod_quiz.showall' | translate }}</span>
+                </a>
+            </ul>
+        </nav>
+    </ion-content>
+</ion-popover-view>
